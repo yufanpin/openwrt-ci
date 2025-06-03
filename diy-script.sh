@@ -38,10 +38,10 @@ echo 'src-git kiddin9 https://github.com/kiddin9/kwrt-packages.git' >>feeds.conf
 
 # 添加额外插件
 
-git clone --depth=1 https://github.com/lwb1978/openwrt-gecoosac package/luci-app-gecoosac
-git clone --depth=1 https://github.com/selfcan/luci-app-onliner package/luci-app-onliner
-git clone --depth=1 https://github.com/sirpdboy/luci-app-netspeedtest package/luci-app-netspeedtest
-git clone --depth=1 https://github.com/sirpdboy/luci-app-partexp package/luci-app-partexp
+git clone --depth=1 https://github.com/lwb1978/openwrt-gecoosac package/
+git clone --depth=1 https://github.com/selfcan/luci-app-onliner package/
+git clone --depth=1 https://github.com/sirpdboy/luci-app-netspeedtest package/
+git clone --depth=1 https://github.com/sirpdboy/luci-app-partexp package/
 
 git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
 git clone --depth=1 -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush package/luci-app-serverchan
