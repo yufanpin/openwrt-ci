@@ -73,11 +73,7 @@ jobs:
         # Add a feed source(By Superman)
 
         
-    - name: Add SRC(添加软件源)By Superman
-      run: |
-        cd openwrt
-        echo 'src-git kiddin9 https://github.com/kiddin9/kwrt-packages.git' >>feeds.conf.default
-
+    
         
 
     - name: update ipk(更新第三方ipk) By Superman
