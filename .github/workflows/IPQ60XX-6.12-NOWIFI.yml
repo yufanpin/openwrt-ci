@@ -65,6 +65,10 @@ jobs:
         df -hT $GITHUB_WORKSPACE
         git clone --depth 1 -b $REPO_BRANCH $REPO_URL openwrt
         cd openwrt
+        
+        # Add a feed source(by superman)
+        echo 'src-git kiddin9 https://github.com/kiddin9/kwrt-packages.git' >>feeds.conf.default
+        
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
         VERSION_INFO=$(git show -s --date=short --format="作者: %an<br/>时间: %cd<br/>内容: %s<br/>hash: %H")
         echo "VERSION_INFO=$VERSION_INFO" >> $GITHUB_ENV
@@ -93,6 +97,14 @@ jobs:
     
     - name: Install Feeds(安装feeds)
       run: |
+        #cd $OPENWRT_PATH    (by superman)
+        cd $OPENWRT_PATH/package/
+        git clone https://github.com/lwb1978/openwrt-gecoosac.git
+        git clone https://github.com/destan19/OpenAppFilter.git
+        git clone https://github.com/selfcan/luci-app-onliner.git
+        git clone https://github.com/sirpdboy/luci-app-partexp.git
+
+        #下面是源代码，如果报错就将上面的代码（添加第三方插件）删掉
         cd $OPENWRT_PATH
         ./scripts/feeds update -a
         ./scripts/feeds install -a
