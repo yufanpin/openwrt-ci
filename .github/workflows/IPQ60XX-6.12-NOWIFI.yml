@@ -76,13 +76,12 @@ jobs:
     
         
 
-    - name: update ipk(更新第三方ipk) By Superman
+    - name: Run DIY Script(执行自定义脚本)
       run: |
-        cd openwrt/package
-        git clone https://github.com/lwb1978/openwrt-gecoosac.git
-        git clone https://github.com/destan19/OpenAppFilter.git
-        git clone https://github.com/selfcan/luci-app-onliner.git
-        git clone https://github.com/sirpdboy/luci-app-partexp.git
+        cd $OPENWRT_PATH 
+        chmod +x ../$DIY_SCRIPT  # 添加执行权限 
+        ../$DIY_SCRIPT            # 在源码目录外执行脚本 
+        echo "自定义脚本执行完成！"
         
 
     
