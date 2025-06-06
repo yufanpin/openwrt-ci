@@ -12,8 +12,7 @@ sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_genera
 # TTYD 免登录
 sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
-# 开启NSS全部功能
-cp -f $GITHUB_WORKSPACE/patches/Makefile target/linux/qualcommax/Makefile
+
 
 
 # 移除要替换的包
@@ -72,9 +71,7 @@ sed -i "s/${orig_version}/R${date_version} by Haiibo/g" package/lean/default-set
 # 修复 armv8 设备 xfsprogs 报错
 @sed -i 's/TARGET_CFLAGS.*/TARGET_CFLAGS += -DHAVE_MAP_SYNC -D_LARGEFILE64_SOURCE/g' feeds/packages/utils/xfsprogs/Makefile
 
-# 修正使用ccache编译vlmcsd的问题
-mkdir -p feeds/packages/net/vlmcsd/patches
-cp -f $GITHUB_WORKSPACE/patches/fix_vlmcsd_compile_with_ccache.patch feeds/packages/net/vlmcsd/patches
+
 
 # 修改 Makefile
 #find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/..\/..\/luci.mk/$(TOPDIR)\/feeds\/luci\/luci.mk/g' {}
