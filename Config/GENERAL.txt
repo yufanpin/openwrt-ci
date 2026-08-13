@@ -9,8 +9,9 @@ CONFIG_PACKAGE_luci-app-samba4=y
 CONFIG_PACKAGE_luci-app-upnp=y
 CONFIG_PACKAGE_luci-app-wolplus=y
 CONFIG_PACKAGE_luci-app-openclash=y
-CONFIG_PACKAGE_luci-app-podman=y
-CONFIG_PACKAGE_podman=y
+#移除podman运行时
+#CONFIG_PACKAGE_luci-app-podman=y
+#CONFIG_PACKAGE_podman=y
 CONFIG_PACKAGE_luci-app-oaf=y
 CONFIG_PACKAGE_luci-app-mosdns=y
 CONFIG_PACKAGE_luci-app-change-mac=y
